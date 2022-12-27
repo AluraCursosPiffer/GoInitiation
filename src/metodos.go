@@ -15,20 +15,20 @@ import (
 const monitoramentos = 2
 const delay = 5
 
-func exibeIntroducao() {
+func ExibeIntroducao() {
 	nome := "Douglas"
 	versao := 1.2
 	fmt.Println("Olá, sr.", nome)
 	fmt.Println("Este programa está na versão", versao)
 }
 
-func exibeMenu() {
+func ExibeMenu() {
 	fmt.Println("1- Iniciar Monitoramento")
 	fmt.Println("2- Exibir Logs")
 	fmt.Println("0- Sair do Programa")
 }
 
-func leComando() int {
+func LeComando() int {
 	var comandoLido int
 	fmt.Scan(&comandoLido)
 	fmt.Println("O comando escolhido foi", comandoLido)
@@ -37,7 +37,7 @@ func leComando() int {
 	return comandoLido
 }
 
-func iniciarMonitoramento() {
+func IniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 	sites := leSitesDoArquivo()
 
@@ -104,7 +104,7 @@ func registraLog(site string, status bool) {
 	arquivo.Close()
 }
 
-func imprimeLogs() {
+func ImprimeLogs() {
 	arquivo, err := ioutil.ReadFile("log.txt")
 
 	if err != nil {
